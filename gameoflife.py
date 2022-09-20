@@ -21,17 +21,20 @@ def print_stage(stage):
 
 def count_neighbors(stage, v_pos, h_pos):
     count = 0
+    # pos -1 & pos +1 so you could check rows and lines next to current pos
     # +2 because range is not inclusive
     for y in range(v_pos - 1, v_pos + 2):
         for x in range(h_pos - 1, h_pos + 2):
+            # not checking itself
             if y == v_pos and x == h_pos:
                 continue # skipping element
-            # elements outside of the grid are off
+            # elements outside of the grid are off, skip it
             # and do not add to the count
             if y < 0 or y >= len(stage[0]):
                 continue 
             if x < 0 or x >= len(stage):
                 continue
+            #update
             if stage[y][x]:
                 count += 1
     return count
