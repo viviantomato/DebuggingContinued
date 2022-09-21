@@ -28,6 +28,8 @@ def one_generation(stage):
     # active_stage = stage.copy()  
     
     # make new copy, immutable ???
+
+    # primitive type: copy value; non-p type: copy reference; use less storage
     active_stage = []
     for i in range(height):
         active_stage.append(stage[i].copy())
